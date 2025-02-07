@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Video and Sound Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+    <!-- Dark Mode Toggle -->
+    <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle Dark Mode">🌙</button>
+
+    <div class="container">
+        <h1>Advanced Video & Sound Generator</h1>
+
+        <!-- Form for prompt submission -->
+        <form id="promptForm">
+            <label for="prompt">Enter Your Prompt:</label>
+            <input type="text" id="prompt" name="prompt" required placeholder="Describe your desired video content">
+            <span class="tooltip">Describe your video or sound content in short (e.g., "A sunset by the beach").</span>
+            <input type="submit" value="Generate">
+            <button type="button" class="clear-button" id="clearButton">Clear</button>
+        </form>
+
+        <!-- Result section -->
+        <div id="result" class="result-section"></div>
+        <div id="error-message" class="error hidden">An error occurred. Please try again.</div>
+        <div id="loading-spinner" class="loading-spinner hidden">Loading...</div>
+        <div class="progress-bar-container hidden">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+    </div>
+
+    <!-- External JS file -->
+    <script src="{{ url_for('static', filename='js/api.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    
+</body>
+</html>
+
+
